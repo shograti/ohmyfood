@@ -1,0 +1,11 @@
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary:#9356DC;
+    --secondary:#FF79DA;
+    --ternary:#992ED0;
+}
