@@ -1,11 +1,266 @@
-*, *::before, *::after{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+h2 {
+  font-weight: 600;
 }
 
 :root {
-    --primary:#9356DC;
-    --secondary:#FF79DA;
-    --ternary:#992ED0;
+  --primary: #9356dc;
+  --secondary: #ff79da;
+  --ternary: #992ed0;
+}
+
+header {
+  text-align: center;
+  padding: 1em 0em 0.5em;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+header img {
+  width: 175px;
+  cursor:pointer;
+}
+
+.location__section {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 1em;
+  background-color: #e9e9e9;
+  padding: 0.7em;
+}
+
+.location__section p {
+  font-weight: 500;
+}
+
+.call-to-action__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 1.5em 3.5em;
+  text-align: center;
+  background-color: #f6f6f6;
+  gap: 0.7em;
+}
+
+.call-to-action__section h2 {
+  max-width: 20ch;
+}
+
+.call-to-action__section h3 {
+  font-weight: 300;
+}
+
+.call-to-action__section button {
+  font-weight: 500;
+  background: rgb(147, 86, 220);
+  background: linear-gradient(
+    0deg,
+    rgba(147, 86, 220, 1) 0%,
+    rgba(255, 121, 218, 1) 100%
+  );
+  color: #fff;
+  border: none;
+  padding: 0.9em 1.3em;
+  font-size: 1rem;
+  border-radius: 30px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  margin-top: 0.7em;
+}
+
+.how-it-works__section,
+.restaurants__section {
+  padding: 2.5em 1em;
+}
+
+.icon-white {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.icon-gray {
+  color: #7d7d7d;
+  font-size: 1.1rem;
+}
+
+.icon-purple {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.how-it-works__elements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.how-it-works__element {
+  display: flex;
+  position: relative;
+  background-color: #f6f6f6bb;
+  padding: 1.6em 1.6em 1.6em 2em;
+  margin-left: 0.6em;
+  border-radius: 20px;
+  gap: 1.3em;
+  align-items: center;
+}
+
+.how-it-works__element p {
+  font-weight: 500;
+}
+
+.how-it-works__element-number {
+  position: absolute;
+  left: -0.7em;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.how-it-works__element:nth-child(3) {
+  background-color: #9256dc1e;
+}
+
+.restaurants__section {
+  background-color: #f6f6f6;
+  padding-bottom: 3.5em;
+}
+
+.restaurants__elements-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  gap: 1em;
+}
+
+.restaurants__element {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.restaurants__element img {
+  width: 100%;
+  object-fit: cover;
+  height: 180px;
+  object-position: bottom;
+}
+
+.restaurants__element-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7em;
+}
+
+.restaurants__element-text-container {
+  font-size: 1.1rem;
+}
+
+.restaurants__element-text-container h4 {
+  font-weight: 800;
+  margin-bottom: 0.3em;
+}
+
+.restaurants__element-text-container p {
+  font-weight: 300;
+}
+
+.restaurant__element-label-new {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 0.3em 0.7em;
+  background-color: #92e1cf;
+  color: #12a083;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+footer {
+  background-color: #383838;
+  padding: 1.2em 1.5em 2em;
+}
+
+.footer__logo {
+  font-family: "Shrikhand", sans-serif;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.footer__element {
+  display: flex;
+}
+
+.footer__element a {
+  margin-left: 1em;
+}
+
+.footer__element:nth-child(2) a{
+    margin-left:0.7em;
+}
+
+.footer__element i {
+  font-size: 0.9rem;
+}
+
+footer nav a,
+footer nav a:visited {
+  color: #fff;
+  font-weight: 500;
+
+  font-family: "Roboto", sans-serif;
 }
