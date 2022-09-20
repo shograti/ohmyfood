@@ -1,0 +1,171 @@
+header {
+  position: relative;
+}
+
+.arrow-left {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.presentation-image__section {
+  width: 100%;
+  height: 290px;
+}
+
+.presentation-image__section img {
+  width: 100%;
+  object-fit: cover;
+  height: 280px;
+}
+
+.restaurant__menu {
+  background-color: #f6f6f6;
+  padding: 2em 1em;
+  margin-top: -4.5em;
+  z-index: 2;
+  position: relative;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.restaurant__menu h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.7rem;
+}
+
+.heart-icon {
+  position: absolute;
+  right: 1.6em;
+  top: 1.6em;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.heart-icon-filled {
+  position: absolute;
+  right: 1.6em;
+  top: 1.6em;
+  font-size: 1.5rem;
+  display: none !important;
+  color: var(--primary);
+}
+
+.heart-icon:hover {
+  opacity: 0;
+}
+
+.heart-icon:hover + .heart-icon-filled {
+  display: block !important;
+}
+
+.heart-icon:hover + .heart-icon {
+  opacity: 0;
+}
+
+.dishes__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.dishes__part {
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  margin-top: 2em;
+}
+
+.dishes__part::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: #92e1cf;
+  width: 12%;
+  bottom: -7px;
+  left: 0;
+}
+
+.dishes__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.3em;
+  gap: 1em;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.7em 1.3em 0.7em 0.7em;
+  border-radius: 15px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  gap: 0.5em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.dish h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 20ch;
+}
+
+.dish p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25ch;
+}
+
+.dish__price {
+  align-self: flex-end;
+  display: flex;
+}
+
+.dish__price p {
+  font-weight: 500;
+}
+
+.order-button {
+  align-self: center;
+  width: 55%;
+  margin: 4em 0em;
+}
+
+.confirmation__order-effect {
+  background-color: #92e1cf;
+  color: #fff;
+  align-self: stretch;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 2;
+  width: 0;
+  padding: 0;
+}
+
+.dish:hover > .confirmation__order-effect {
+  width: auto;
+  padding: 0em 0.7em;
+  transition: 0.5s;
+}
+
+.dish:hover > .dish__price p {
+  margin-right: 3em;
+  transition: 0.5s;
+}

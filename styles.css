@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -43,12 +47,14 @@ h2 {
 header {
   text-align: center;
   padding: 1em 0em 0.5em;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  width: 100%;
+  box-shadow: rgb(192, 192, 192) 0px 5px 5px;
+  position: relative;
 }
 
 header img {
   width: 175px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .location__section {
@@ -57,7 +63,7 @@ header img {
   justify-content: center;
   gap: 1em;
   background-color: #e9e9e9;
-  padding: 0.7em;
+  padding: 1em;
 }
 
 .location__section p {
@@ -83,7 +89,7 @@ header img {
   font-weight: 300;
 }
 
-.call-to-action__section button {
+.call-to-action__button {
   font-weight: 500;
   background: rgb(147, 86, 220);
   background: linear-gradient(
@@ -96,10 +102,16 @@ header img {
   padding: 0.9em 1.3em;
   font-size: 1rem;
   border-radius: 30px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  margin-top: 0.7em;
+  position: relative;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.call-to-action__button:hover {
+  filter: brightness(110%);
+  transition: ease-in-out 0.5s;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 10px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .how-it-works__section,
@@ -132,12 +144,14 @@ header img {
 .how-it-works__element {
   display: flex;
   position: relative;
-  background-color: #f6f6f6bb;
+  background-color: #dbdbdb5f;
   padding: 1.6em 1.6em 1.6em 2em;
   margin-left: 0.6em;
   border-radius: 20px;
   gap: 1.3em;
   align-items: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .how-it-works__element p {
@@ -182,6 +196,7 @@ header img {
   background-color: #fff;
   overflow: hidden;
   position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .restaurants__element img {
@@ -249,8 +264,8 @@ footer nav {
   margin-left: 1em;
 }
 
-.footer__element:nth-child(2) a{
-    margin-left:0.7em;
+.footer__element:nth-child(2) a {
+  margin-left: 0.7em;
 }
 
 .footer__element i {
@@ -263,4 +278,34 @@ footer nav a:visited {
   font-weight: 500;
 
   font-family: "Roboto", sans-serif;
+}
+
+.homepage-heart-icon {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.homepage-heart-icon-filled {
+  position: absolute;
+  right: 1.6em;
+  right: 1em;
+  bottom: 1em;
+  font-size: 1.5rem;
+  display: none !important;
+  color: var(--primary) !important;
+}
+.homepage-heart-icon:hover + .homepage-heart-icon-filled {
+  display: block !important;
+}
+
+.homepage-heart-icon:hover {
+  opacity: 0;
+}
+
+.homepage-heart-icon:hover + .homepage-heart-icon {
+  opacity: 0;
 }
