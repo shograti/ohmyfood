@@ -106,7 +106,23 @@ header {
   cursor: pointer;
   gap: 0.5em;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition:0.5s;
+  animation-name: showRecipe;
+  
 }
+
+.dish:nth-child(1){
+  animation-duration: 1.5s;
+}
+
+.dish:nth-child(2){
+  animation-duration: 2s;
+}
+
+.dish:nth-child(3){
+  animation-duration: 2.5s;
+}
+
 
 .dish h4 {
   font-size: 1.1rem;
@@ -134,6 +150,7 @@ header {
 
 .dish__price p {
   font-weight: 500;
+  transition: ease-in 0.5s
 }
 
 .order-button {
@@ -157,15 +174,28 @@ header {
   z-index: 2;
   width: 0;
   padding: 0;
+  transition: ease-in 0.5s
 }
 
 .dish:hover > .confirmation__order-effect {
   width: auto;
   padding: 0em 0.7em;
-  transition: 0.5s;
+  transition: ease-in 0.5s
 }
 
 .dish:hover > .dish__price p {
   margin-right: 3em;
-  transition: 0.5s;
+  transition: ease-in 0.5s
 }
+
+
+@keyframes showRecipe{
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+

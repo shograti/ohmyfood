@@ -309,3 +309,113 @@ footer nav a:visited {
 .homepage-heart-icon:hover + .homepage-heart-icon {
   opacity: 0;
 }
+
+.loader-wrapper {
+  position: absolute;
+  background-color: var(--primary);
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  padding-bottom: 2em;
+  animation-name: hideLoader;
+  animation-duration: 5s;
+  opacity:1
+}
+
+header,
+footer,
+section {
+  display: none;
+}
+
+.loader-logo {
+  font-family: "Shrikhand", sans-serif;
+  color: #fff;
+}
+
+.loader-icon-container img {
+  height: 50px;
+  transform: rotate(-45deg);
+}
+
+.loader-icon-container img:nth-child(1) {
+  animation: moveFork 1s alternate-reverse linear infinite;
+}
+
+.loader-icon-container img:nth-child(2) {
+  height: 45px;
+}
+
+.ustensil-icon {
+  background-color: #fff;
+  font-size: 3rem;
+}
+
+@keyframes moveFork {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(-130deg);
+  }
+}
+
+@keyframes hideLoader {
+  from {
+    z-index:3
+  }
+
+  to {
+    z-index:-2
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    position: relative;
+  }
+
+  body {
+    max-width: 1390px;
+    margin: 0 auto;
+    margin-top: 4em;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .how-it-works__elements-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+  }
+
+  .restaurants__elements-container {
+    flex-direction: row;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0em;
+  }
+
+  footer nav {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2em;
+  }
+}
