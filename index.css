@@ -1,62 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-weight: normal;
-  font-style: normal;
-  font-family: "Roboto", sans-serif;
-}
-
-a,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-h2 {
-  font-weight: 600;
-}
-
-:root {
-  --primary: #9356dc;
-  --secondary: #ff79da;
-  --ternary: #992ed0;
-}
-
-header {
-  text-align: center;
-  padding: 1em 0em 0.5em;
-  width: 100%;
-  box-shadow: rgb(192, 192, 192) 0px 5px 5px;
-  position: relative;
-}
-
-header img {
-  width: 175px;
-  cursor: pointer;
-}
-
 .location__section {
   display: flex;
   align-items: baseline;
@@ -87,31 +28,6 @@ header img {
 
 .call-to-action__section h3 {
   font-weight: 300;
-}
-
-.call-to-action__button {
-  font-weight: 500;
-  background: rgb(147, 86, 220);
-  background: linear-gradient(
-    0deg,
-    rgba(147, 86, 220, 1) 0%,
-    rgba(255, 121, 218, 1) 100%
-  );
-  color: #fff;
-  border: none;
-  padding: 0.9em 1.3em;
-  font-size: 1rem;
-  border-radius: 30px;
-  position: relative;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-}
-
-.call-to-action__button:hover {
-  filter: brightness(110%);
-  transition: ease-in-out 0.5s;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 10px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .how-it-works__section,
@@ -238,47 +154,6 @@ header img {
   font-weight: 600;
 }
 
-footer {
-  background-color: #383838;
-  padding: 1.2em 1.5em 2em;
-}
-
-.footer__logo {
-  font-family: "Shrikhand", sans-serif;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-bottom: 1em;
-}
-
-footer nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6em;
-}
-.footer__element {
-  display: flex;
-}
-
-.footer__element a {
-  margin-left: 1em;
-}
-
-.footer__element:nth-child(2) a {
-  margin-left: 0.7em;
-}
-
-.footer__element i {
-  font-size: 0.9rem;
-}
-
-footer nav a,
-footer nav a:visited {
-  color: #fff;
-  font-weight: 500;
-
-  font-family: "Roboto", sans-serif;
-}
 
 .homepage-heart-icon {
   position: absolute;
@@ -297,9 +172,11 @@ footer nav a:visited {
   font-size: 1.5rem;
   display: none !important;
   color: var(--primary) !important;
+  transition: 0.5s;
 }
 .homepage-heart-icon:hover + .homepage-heart-icon-filled {
   display: block !important;
+  transition: 0.5s;
 }
 
 .homepage-heart-icon:hover {
@@ -308,6 +185,16 @@ footer nav a:visited {
 
 .homepage-heart-icon:hover + .homepage-heart-icon {
   opacity: 0;
+  transition: 0.5s;
+}
+
+header,
+section,
+main,
+footer,
+article {
+  animation: appear 3s normal forwards;
+  height: 0px;
 }
 
 .loader-wrapper {
@@ -315,7 +202,6 @@ footer nav a:visited {
   background-color: var(--primary);
   height: 100%;
   width: 100%;
-  z-index: 3;
   bottom: 0;
   left: 0;
   display: flex;
@@ -324,15 +210,8 @@ footer nav a:visited {
   flex-direction: column;
   gap: 2em;
   padding-bottom: 2em;
-  animation-name: hideLoader;
-  animation-duration: 5s;
-  opacity:1
-}
-
-header,
-footer,
-section {
-  display: none;
+  z-index: 5;
+  animation: disappear 3s normal forwards;
 }
 
 .loader-logo {
@@ -358,6 +237,27 @@ section {
   font-size: 3rem;
 }
 
+@keyframes appear {
+  0% {
+    height: 0px;
+  }
+  99% {
+    height: 0px;
+  }
+  100% {
+    height: auto;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
 @keyframes moveFork {
   from {
     transform: rotate(45deg);
@@ -368,33 +268,7 @@ section {
   }
 }
 
-@keyframes hideLoader {
-  from {
-    z-index:3
-  }
-
-  to {
-    z-index:-2
-  }
-}
-
 @media screen and (min-width: 768px) {
-  html {
-    position: relative;
-  }
-
-  body {
-    max-width: 1390px;
-    margin: 0 auto;
-    margin-top: 4em;
-  }
-
-  header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
 
   .how-it-works__elements-container {
     flex-direction: row;
@@ -403,19 +277,9 @@ section {
   }
 
   .restaurants__elements-container {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 0em;
-  }
-
-  footer nav {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 2em;
-  }
 }
