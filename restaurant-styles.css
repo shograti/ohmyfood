@@ -1,5 +1,6 @@
 header {
   position: relative;
+  z-index: 3;
 }
 
 .arrow-left {
@@ -68,16 +69,22 @@ header {
 .dishes__section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .dishes__part {
+  display: flex;
+  flex-direction: column;
+}
+
+.dishes__part-title {
   text-transform: uppercase;
   font-weight: 300;
   position: relative;
   margin-top: 2em;
 }
 
-.dishes__part::after {
+.dishes__part-title::after {
   content: "";
   position: absolute;
   height: 3px;
@@ -106,23 +113,25 @@ header {
   cursor: pointer;
   gap: 0.5em;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition:0.5s;
+  transition: 0.5s;
   animation-name: showRecipe;
-  
 }
 
-.dish:nth-child(1){
+.dish:nth-child(1) {
   animation-duration: 1.5s;
 }
 
-.dish:nth-child(2){
+.dish:nth-child(2) {
   animation-duration: 2s;
 }
 
-.dish:nth-child(3){
+.dish:nth-child(3) {
   animation-duration: 2.5s;
 }
 
+.dish:nth-child(4) {
+  animation-duration: 3s;
+}
 
 .dish h4 {
   font-size: 1.1rem;
@@ -131,16 +140,24 @@ header {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 20ch;
+  max-width: 100%;
+  white-space: none;
 }
 
-.dish p {
+.dish__infos {
+  width: 90%;
+  overflow: hidden;
+  white-space: none;
+}
+
+.dish__infos > p {
   font-size: 0.95rem;
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 25ch;
+  width: 90%;
+  white-space: none;
 }
 
 .dish__price {
@@ -150,7 +167,7 @@ header {
 
 .dish__price p {
   font-weight: 500;
-  transition: ease-in 0.5s
+  transition: ease-in-out 0.5s;
 }
 
 .order-button {
@@ -174,22 +191,23 @@ header {
   z-index: 2;
   width: 0;
   padding: 0;
-  transition: ease-in 0.5s
+  transition: ease-in-out 0.5s;
 }
 
-.dish:hover > .confirmation__order-effect {
+.dish:hover > .confirmation__order-effect,
+.dish:active > .confirmation__order-effect {
   width: auto;
   padding: 0em 0.7em;
-  transition: ease-in 0.5s
+  transition: ease-in-out 0.5s;
 }
 
-.dish:hover > .dish__price p {
-  margin-right: 3em;
-  transition: ease-in 0.5s
+.dish:hover > .dish__price p,
+.dish:active > .dish__price p {
+  padding-right: 3em;
+  transition: ease-in-out 0.5s;
 }
 
-
-@keyframes showRecipe{
+@keyframes showRecipe {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -199,15 +217,66 @@ header {
   }
 }
 
-@media screen and (min-width:768px){
-
-  .presentation-image__section img{
-    height:600px;
+@media screen and (min-width: 768px) {
+  body {
+    padding-bottom: 300px;
+    background-color: #f6f6f6;
   }
   .restaurant__menu {
-    max-width:600px;
-    margin: -200px auto 50px auto;
+    max-width: 620px;
+    padding-left: 2em;
+    border-radius: 30px;
+    padding-bottom: 0em;
+    margin: -400px auto 7em auto;
   }
-  
+  .dishes {
+    flex-direction: column;
+  }
+  .dish {
+    max-width: 500px;
+  }
+
+  .presentation-image__section {
+    width: 100%;
+    height: 500px;
+  }
+
+  .presentation-image__section img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
 }
 
+@media screen and (min-width: 1323px) {
+  .restaurant__menu {
+    max-width: 1250px;
+    border-radius: 30px;
+    padding-bottom: 0em;
+    margin-top: -80vh;
+  }
+  .dishes {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    flex-direction: row;
+  }
+
+  .dish {
+    width: 350px;
+  }
+
+  .order-button {
+    width: 250px;
+  }
+  .presentation-image__section {
+    width: 100%;
+    height: calc(100vh - 130px);
+  }
+
+  .presentation-image__section img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+}
