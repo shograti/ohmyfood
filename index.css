@@ -231,10 +231,6 @@ article {
   animation: moveFork 1s alternate-reverse linear infinite;
 }
 
-.loader-icon-container img:nth-child(2) {
-  height: 45px;
-}
-
 .ustensil-icon {
   background-color: #fff;
   font-size: 3rem;
