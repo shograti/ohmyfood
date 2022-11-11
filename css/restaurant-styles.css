@@ -24,14 +24,14 @@ header {
 
 .restaurant__menu {
   background-color: #f6f6f6;
-  padding: 2em 1em;
+  padding: 2em 1em 300px;
   margin-top: -4.5em;
   z-index: 2;
   position: relative;
   border-radius: 30px 30px 0px 0px;
 }
 
-.restaurant__menu h2 {
+.restaurant__menu h1 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.7rem;
 }
@@ -82,6 +82,7 @@ header {
   font-weight: 300;
   position: relative;
   margin-top: 2em;
+  font-size: 1.2rem;
 }
 
 .dishes__part-title::after {
@@ -218,10 +219,10 @@ header {
 
 @media screen and (min-width: 768px) {
   body {
-    padding-bottom: 300px;
     background-color: #f6f6f6;
   }
   .restaurant__menu {
+    
     max-width: 620px;
     padding-left: 2em;
     border-radius: 30px;
@@ -281,6 +282,5 @@ header {
     width: 100%;
     object-fit: cover;
     height: 100%;
-
   }
 }

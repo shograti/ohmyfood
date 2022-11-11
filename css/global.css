@@ -10,6 +10,8 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 h1,
@@ -69,7 +71,7 @@ header img {
     rgba(147, 86, 220, 1) 0%,
     rgba(255, 121, 218, 1) 100%
   );
-  color: #fff!important;
+  color: #fff !important;
   border: none;
   padding: 0.9em 1.3em;
   font-size: 1rem;
@@ -139,7 +141,6 @@ footer nav a:visited {
 
 body {
   height: 100vh;
-  padding-bottom: 200px;
 }
 
 @media screen and (min-width: 768px) {
