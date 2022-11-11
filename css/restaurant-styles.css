@@ -222,7 +222,6 @@ header {
     background-color: #f6f6f6;
   }
   .restaurant__menu {
-    
     max-width: 620px;
     padding-left: 2em;
     border-radius: 30px;
@@ -272,10 +271,14 @@ header {
   }
   .presentation-image__section {
     width: 100%;
-    height: 99%;
+    height: 100vh;
     position: absolute;
-    bottom: 0;
     top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1920px;
+    margin: 0 auto;
   }
 
   .presentation-image__section img {
